@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             background-color: rgb(78, 11, 11);
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-family: 'inter', sans-serif;
         }
 
         li
@@ -40,13 +40,13 @@
             display: flex;
             justify-content: space-between;
             z-index: 1000;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
         .logo
         {
             color: white;
             font-size: 30px;
-            margin: 25px 60px;
+            margin: 25px 80px;
             font-weight: bolder;
         }
         .logo span
@@ -55,6 +55,7 @@
         }
         .nav-links
         {
+            margin-right: 30px;
             display: flex;
         }
 
@@ -82,7 +83,7 @@
         .home div
         {
             line-height: 40px;
-            padding: 200px 0px 60px 60px;
+            padding: 200px 0px 60px 80px;
         }
         .home span
         {
@@ -150,15 +151,14 @@
         {
             font-weight: lighter;
         }
-        .details ul
+
+        .details div
         {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
+            margin: 10px;
         }
-        .details ul li
+        .details div span
         {
-            padding: 10px;
+            margin: 8px;
         }
         .profile img
         {
@@ -204,21 +204,19 @@
             font-size: 15px;
             font-weight: lighter;
         }
-        .project-card ul
+        .project-card div
         {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            margin: 10px;
         }
-        .project-card ul li
+        .project-card div span
         {
-            padding: 10px;
+            margin: 8px;
         }
 
         /*    contact    */
         .contact
         {
-            height: 60vh;
+            height: 45vh;
             margin: 30px;
             color: white;
             text-align: center;
@@ -253,10 +251,10 @@
             border-radius: 20px;
         }
 
-       /* .side-button
+        .side-button
         {
             display: none;
-        }*/
+        }
         footer
         {
             text-align: center;
@@ -278,6 +276,7 @@
             .logo
             {
                 font-size: 20px;
+                margin: 20px 30px;
             }
             .home
             {
@@ -336,22 +335,26 @@
                 padding: 15px 30px;
             }
 
-            /*
+            /*    side button   */
             .side-button
             {
                 display: block;
-                position: fixed;
-                bottom: 30px;
-                right: 25px;
+                margin-right: 5px;
+                margin-top: -8px;
             }
-            .side-button a
+            .side-button summary
             {
-                background-color: skyblue;
-                color: black;
-                padding: 15px 20px;
+                color: white;
+                padding: 12px 16px 15px 22px;
                 border-radius: 15px;
-                font-size: 38px;
-            }*/
+                font-size: 30px;
+                list-style: none;
+                margin: 10px;
+            }
+            .sb-1
+            {
+                background-color: black;
+            }
         }
     </style>
 </head>
@@ -365,6 +368,18 @@
             <li><a href="#projects">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+         <!---   side button  --->
+    <div class="side-button">
+        <details>
+            <summary class="bi bi-three-dots-vertical"></summary>
+            <summary class="sb-1"><a href="" class="bi bi-linkedin"></a></summary>
+            <summary class="sb-1"><a href="" class="bi bi-whatsapp"></a></summary>
+            <summary class="sb-1"><a href="" class="bi bi-twitter"></a></summary>
+            <summary class="sb-1"><a href="" class="bi bi-facebook"></a></summary>
+            <summary class="sb-1"><a href="" class="bi bi-instagram"></a></summary>
+
+        </details>
+    </div>
     </nav>
 
     <!----   home   --->
@@ -400,12 +415,12 @@
                 <p>
                     Here are a few technologies I've been working with recently:
                 </p>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>SQL</li>
-                </ul>
+                <div>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Node.Js</span>
+                    <span>SQL</span>
+                </div>
             </div>
             <div class="profile">
                 <img src="1744681970745.jpg" alt="">
@@ -423,24 +438,24 @@
                     a robust backend to streamline data entry, manage permissions securely, and organize large datasets
                     seamlessly for administrative users.
                 </p>
-                <ul>
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>PostgreSQL</li>
-                    <li>React</li>
-                </ul>
+                <div>
+                    <span>Express</span>
+                    <span>PostgreSQL</span>
+                    <span>React</span>
+                </div>
             </div>
 
             <div class="project-card">
                 <h3>E-Commerce Storefront</h3>
                 <p>
                     A responsive e-commerce platform featuring a custom shopping cart, user
-                    authentication, and secure payment gateway integration using Stripe.</p>
-                <ul>
-                    <li>Next.js</li>
-                    <li>Tailwind CSS</li>
-                    <li>Stripe API</li>
-                </ul>
+                    authentication, and secure payment gateway integration using Stripe.
+                </p>
+                <div>
+                    <span>Next.Js</span>
+                    <span>Tailwind CSS</span>
+                    <span>Stripe API</span>
+                </div>
             </div>
 
             <div class="project-card">
@@ -449,11 +464,11 @@
                     A data visualization dashboard that pulls real-time analytics from a third-party API, allowing users
                     to filter and sort metrics dynamically.
                 </p>
-                <ul>
-                    <li>Vue.js</li>
-                    <li>D3.js</li>
-                    <li>REST API</li>
-                </ul>
+                <div>
+                    <span>Vue.Js</span>
+                    <span>D3.Js</span>
+                    <span>Rest API</span>
+                </div>
             </div>
         </div>
     </div>
@@ -467,13 +482,6 @@
         </p>
         <a href="mailto:mughalrehan621@gmail.com">Say Hello</a>
     </div>
-
-    <!---   side button   -->
-    <!--
-    <div class="side-button">
-        <a href="" class="bi bi-whatsapp"> </a>
-    </div>
-    --->
 
     <footer>
         <p>Designed & Built by Rehan Ahmad &copy; 2026</p>
