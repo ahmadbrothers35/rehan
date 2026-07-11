@@ -4,550 +4,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <title>Developer Portfolio</title>
+    <!-- Tailwind CSS for utility styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Alpine.js for lightweight state management and transitions -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- FontAwesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body
-        {
-            display: ;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(78, 11, 11);
-            font-family: 'inter', sans-serif;
+        [x-cloak] {
+            display: none !important;
         }
 
-        li
-        {
-            list-style: none;
-            padding: 20px;
-        }
-        a
-        {
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-        }
-
-        /* Navigation */
-        nav
-        {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            z-index: ;
-            backdrop-filter: blur(15px);
-        }
-        .logo
-        {
-            color: white;
-            font-size: 30px;
-            margin: 25px 80px;
-            font-weight: bolder;
-        }
-        .logo span
-        {
-            color: green;
-        }
-        .nav-links
-        {
-            margin-right: 30px;
-            display: flex;
-        }
-        .nav-links a:hover
-        {
-            font-weight: bolder;
-            font-size: 20px;
-            border-radius: 15px;
-            padding: 10px 25px;
-            margin: -28px;
-            border: 1px solid white;
-            background-color: black;
-        }
-        .side-button
-        {
-            display: none;
-        }
-
-        /*    home    */
-        .home
-        {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.pexels.com/photos/34803977/pexels-photo-34803977.jpeg);
-            background-position: center;
-            height: 100vh;
-            background-size: cover;
-            background-repeat: no-repeat;
-            color: white;
-            margin-top: -80px;
-        }
-        .home div
-        {
-            line-height: 40px;
-            padding: 180px 0px 60px 80px;
-        }
-        .home span
-        {
-            font-size: 20px;
-        }
-        .home h1
-        {
-            font-size: 50px;
-            font-weight: bolder;
-        }
-        .home h3
-        {
-            font-size: 50px;
-            color: green;
-        }
-        .home p
-        {
-            max-width: 700px;
-            font-size: 20px;
-            font-style: italic;
-            margin-bottom: 50px;
-        }
-        .home a
-        {
-            backdrop-filter: blur(10px);
-            padding: 15px 50px;
-            border-radius: 15px;
-            border: 2px solid white;
-        }
-        .home a:hover
-        {
-            border-radius: 15px;
-            font-size: 20px;
-            box-shadow: 2px 2px 16px 2px skyblue;
-            border: 0;
-        }
-
-        /*    about    */
-        .about
-        {
-            margin: 30px;
-            padding: 20px;
-            color: white;
-            border-radius: 20px;
-        }
-        .about h3
-        {
-            text-align: center;
-            font-size: 35px;
-        }
-        .about div
-        {
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-        .details
-        {
-            max-width: 600px;
-            font-size: 20px;
-            align-items: center;
-            line-height: 30px;
-            text-align: center
-        }
-        .details p
-        {
-            font-weight: lighter;
-        }
-
-        .details div
-        {
-            margin: 10px;
-        }
-        .details div span
-        {
-            margin: 8px;
-        }
-        .profile img
-        {
-            height: 600px;
-            width: 400px;
-            background-color: green;
-            border-radius: 0px 30px 30px 0px;
-        }
-
-        /*   projects    */
-        .projects
-        {
-            margin: 50px 30px 30px 50px;
-            color: white;
-        }
-        .projects h3
-        {
-            text-align: center;
-            font-size: 35px;
-        }
-        .projects div
-        {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-        .project-card
-        {
-            border-radius: 10px;
-            max-width: 400px;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            align-items: center;
-            background-color: rgb(26, 42, 26);
-        }
-        .project-card h3
-        {
-            font-size: 20px;
-        }
-        .project-card p
-        {
-            font-size: 15px;
-            font-weight: lighter;
-            text-align: center;
-        }
-        .project-card div
-        {
-            margin: 10px;
-        }
-        .project-card div span
-        {
-            margin: 8px;
-        }
-
-        /*    contact    */
-        .contact
-        {
-            height: 46vh;
-            margin: 30px 15px 10px 15px;
-            color: white;
-            text-align: center;
-            align-items: ;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .contact h3
-        {
-            font-size: 70px;
-        }
-        .contact p
-        {
-            font-size: 15px;
-            max-width: 700px;
-            line-height: 35px;
-            font-weight: lighter;
-        }
-        .contact a
-        {
-            margin-top: 30px;
-            padding: 20px 70px;
-            border: 1px solid white;
-            border-radius: 10px;
-        }
-        .contact a:hover
-        {
-            background: repeating-radial-gradient(green,black);
-            font-size: 25px;
-            border-radius: 20px;
-        }
-
-        /*    social links   */
-        .social-links
-        {
-            margin: 20px;
-            padding: 20px;
-            display: block;
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .social-links a
-        {
-            font-size: 20px;
-        }
-        .social-links a:hover
-        {
-            color: green;
-        }
-
-        /*   footer   */
-        footer
-        {
-            text-align: center;
-            color: white;
-            padding-bottom: 20px;
-        }
-
-        /*     for smart devices    */
-        @media (max-width:720px)
-        {
-            /*   anvigation   */
-            #nav
-            {
-                height: 60px;
-            }
-            #nav ul
-            {
-                display: none;
-            }
-            .logo
-            {
-                font-size: 20px;
-                margin: 20px 30px;
-            }
-
-            /*    side button   */
-            .side-button
-            {
-                display: block;
-                margin-right: 5px;
-                margin-top: -8px;
-            }
-            .side-button summary
-            {
-                color: white;
-                padding: 12px 15px 15px 22px;
-                border-radius: 15px;
-                font-size: 30px;
-                list-style: none;
-                margin: 10px;
-            }
-            .sb-1
-            {
-                background-color: black;
-            }
-
-            /*   home   */
-            .home
-            {
-                background: url(https://images.pexels.com/photos/5496459/pexels-photo-5496459.jpeg);
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            .home div
-            {
-                line-height: 30px;
-                padding: 150px 20px 100px 20px;
-                text-align: center;
-            }
-            .home h3
-            {
-                font-size: 30px;
-            }
-            .home h1
-            {
-                font-size: 35px;
-            }
-            .home p
-            {
-                font-size: 15px;
-            }
-            .home a
-            {
-                margin-top: 80px;
-            }
-            
-            /*   about   */
-            .about
-            {
-                padding: 0;
-            }
-            .details
-            {
-                max-width: 350px;
-            }
-            .details p
-            {
-                font-size: 15px;
-            }
-            .details ul li
-            {
-                font-size: 15px;
-                padding: 8px;
-            }
-            .profile img
-            {
-                border-radius: 0px 0px 30px 30px;
-                height: 400px;
-                width: 270px;
-            }
-
-            /*   projects    */
-            .projects
-            {
-                margin: 25px;
-            }
-            .project-card
-            {
-                text-align: left;
-            }
-            .project-card ul
-            {
-                text-align: center;
-            }
-            .project-card ul li
-            {
-                padding: 8px;
-            }
-
-            /*   contact   */
-            .contact a 
-            {
-                padding: 15px 30px;
-            }
-
-            /*   social links   */
-            .social-links
-            {
-                display: none;
-            }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
         }
     </style>
 </head>
+<!-- Initializing both active page state and mobile menu open state globally -->
 
-<body>
-    <!---    navigation bar   --->
-    <nav id="nav">
-        <div class="logo">AHMAD <span> BROTHERS</span></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-         <!---   side button  --->
-        <div class="side-button">
-            <details>
-                <summary class="bi bi-three-dots-vertical"></summary>
-                <summary class="sb-1"><a href="" class="bi bi-linkedin"></a></summary>
-                <summary class="sb-1"><a href="" class="bi bi-whatsapp"></a></summary>
-                <summary class="sb-1"><a href="" class="bi bi-twitter"></a></summary>
-                <summary class="sb-1"><a href="" class="bi bi-facebook"></a></summary>
-                <summary class="sb-1"><a href="" class="bi bi-instagram"></a></summary>
-            </details>
+<body x-data="{ activePage: 'home', mobileMenuOpen: false }"
+    class="font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Animated Glow Orbs -->
+    <div
+        class="fixed -top-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none dynamic-glow animate-pulse duration-5000">
+    </div>
+    <div
+        class="fixed bottom-10 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none dynamic-glow animate-pulse duration-7000">
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800/80">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" @click.prevent="activePage = 'home'; mobileMenuOpen = false"
+                class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                AHMAD BROTHERS
+            </a>
+
+            <!-- Desktop Nav Links (Hidden on small screens) -->
+            <div class="hidden md:flex space-x-4">
+                <template x-for="page in ['home', 'skills', 'projects', 'contact']">
+                    <button @click="activePage = page"
+                        class="px-3 py-1.5 rounded-lg text-sm font-medium capitalize transition-all duration-300 relative"
+                        :class="activePage === page ? 'text-indigo-400' : 'text-slate-400 hover:text-slate-200'">
+                        <span x-text="page"></span>
+                        <!-- Underline Animation indicator -->
+                        <span x-show="activePage === page" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 scale-x-0"
+                            x-transition:enter-end="opacity-100 scale-x-100"
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-400 origin-center rounded"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- Hamburger Button (Hidden on desktop screens) -->
+            <div class="md:hidden">
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="relative w-10 h-10 text-slate-400 hover:text-slate-200 focus:outline-none flex flex-col justify-center items-center gap-1.5 z-50"
+                    aria-label="Toggle Menu">
+                    <!-- Top Line -->
+                    <span class="h-0.5 w-6 bg-current transform transition duration-300 ease-in-out rounded"
+                        :class="mobileMenuOpen ? 'rotate-45 translate-y-2' : ''"></span>
+                    <!-- Middle Line -->
+                    <span class="h-0.5 w-6 bg-current transition duration-200 ease-in-out rounded"
+                        :class="mobileMenuOpen ? 'opacity-0' : ''"></span>
+                    <!-- Bottom Line -->
+                    <span class="h-0.5 w-6 bg-current transform transition duration-300 ease-in-out rounded"
+                        :class="mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer Menu Dropdown -->
+        <div x-show="mobileMenuOpen" x-cloak x-transition:enter="transition ease-out duration-200 transform"
+            x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150 transform"
+            x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4"
+            class="md:hidden border-b border-slate-800 bg-slate-900/95 backdrop-blur-lg px-6 py-4 space-y-2 absolute top-full left-0 w-full">
+            <template x-for="page in ['home', 'skills', 'projects', 'contact']">
+                <button @click="activePage = page; mobileMenuOpen = false"
+                    class="block w-full text-left px-4 py-2.5 rounded-xl text-base font-medium capitalize transition-all"
+                    :class="activePage === page ? 'bg-indigo-600/20 text-indigo-400 font-semibold' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'">
+                    <span x-text="page"></span>
+                </button>
+            </template>
         </div>
-    </nav>
+    </header>
 
-    <!----   home   --->
-    <div class="home">
-        <div class="home-1">
-            <span>Hi, my name is</span>
-            <h1>REHAN AHMAD</h1>
-            <h3>I build things for web</h3>
-            <p>
-                I'm a software engineer specializing in building (and occasionally designing) exceptional digital
-                experiences. Currently, I'm focused on building accessible, human-centered products .....
+    <!-- Main Section Router / Container -->
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-16 min-h-screen flex flex-col justify-center">
+
+        <!-- HOME PAGE -->
+        <section x-show="activePage === 'home'" x-cloak x-transition:enter="transition ease-out duration-500 transform"
+            x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+            class="space-y-6 max-w-3xl">
+            <p class="text-indigo-400 font-mono text-lg tracking-widest uppercase">Hi, my name is</p>
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-100">
+                REHAN AHMAD
+            </h1>
+            <h2 class="text-3xl sm:text-5xl font-bold text-slate-400">
+                I build fluid digital environments.
+            </h2>
+            <p class="text-slate-400 text-lg max-w-xl leading-relaxed">
+                I am a creative full-stack developer specialized in engineering responsive, beautifully animated, and
+                technically sound interfaces.
             </p>
-            <a href="#projects">show case</a>
-        </div>
-    </div>
+            <div class="pt-4 flex flex-wrap gap-4">
+                <button @click="activePage = 'projects'"
+                    class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl shadow-lg shadow-indigo-600/20 hover:shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-1">
+                    View Work
+                </button>
+                <button @click="activePage = 'contact'"
+                    class="px-6 py-3 border border-slate-700 hover:border-indigo-400 text-slate-300 hover:text-indigo-400 font-medium rounded-xl transition-all duration-300 transform hover:-translate-y-1">
+                    Get In Touch
+                </button>
+            </div>
+        </section>
 
-    <!----   about  --->
-    <div class="about" id="about">
-        <h3>About Me</h3>
-        <div>
-            <div class="details">
-                <p>
-                    Hello! My name is REHAN AHMAD and I enjoy creating things that live on the internet. My interest
-                    in
-                    web development started back in year when I decided to try editing custom Tumblr themes — turns
-                    out hacking together HTML & CSS taught me a lot about coding!
-                </p>
-                <p>
-                    Fast-forward to today, and I've had the privilege of building software for varied clients and
-                    personal ventures. My main focus these days is building inclusive products and robust architectures
-                    for a variety of web applications.
-                </p>
-                <p>
-                    Here are a few technologies I've been working with recently:
-                </p>
-                <div>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Node.Js</span>
-                    <span>SQL</span>
+        <!-- SKILLS PAGE -->
+        <section x-show="activePage === 'skills'" x-cloak
+            x-transition:enter="transition ease-out duration-500 transform"
+            x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+            class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-3xl font-bold text-slate-100">Technical Abilities</h2>
+                <p class="text-slate-400 mt-1">Tools and architectural strategies I work with daily.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Frontend Deck -->
+                <div
+                    class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all">
+                    <div
+                        class="w-12 h-12 bg-indigo-500/10 text-indigo-400 flex items-center justify-center rounded-xl text-xl mb-4">
+                        <i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-200">Frontend Dev</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex justify-between"><span>React / Next.js</span><span
+                                class="text-indigo-400">Expert</span></li>
+                        <li class="flex justify-between"><span>Tailwind CSS</span><span
+                                class="text-indigo-400">Advanced</span></li>
+                        <li class="flex justify-between"><span>TypeScript</span><span
+                                class="text-indigo-400">Intermediate</span></li>
+                    </ul>
+                </div>
+                <!-- Backend Deck -->
+                <div
+                    class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all">
+                    <div
+                        class="w-12 h-12 bg-purple-500/10 text-purple-400 flex items-center justify-center rounded-xl text-xl mb-4">
+                        <i class="fa-solid fa-server"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-200">Backend System</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex justify-between"><span>Node.js / Express</span><span
+                                class="text-purple-400">Advanced</span></li>
+                        <li class="flex justify-between"><span>PostgreSQL / Mongo</span><span
+                                class="text-purple-400">Advanced</span></li>
+                        <li class="flex justify-between"><span>GraphQL / REST APIs</span><span
+                                class="text-purple-400">Expert</span></li>
+                    </ul>
+                </div>
+                <!-- Systems Dev -->
+                <div
+                    class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all">
+                    <div
+                        class="w-12 h-12 bg-emerald-500/10 text-emerald-400 flex items-center justify-center rounded-xl text-xl mb-4">
+                        <i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-200">Infrastructure</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex justify-between"><span>Docker Containers</span><span
+                                class="text-emerald-400">Intermediate</span></li>
+                        <li class="flex justify-between"><span>AWS Cloud Services</span><span
+                                class="text-emerald-400">Advanced</span></li>
+                        <li class="flex justify-between"><span>CI/CD Automations</span><span
+                                class="text-emerald-400">Intermediate</span></li>
+                    </ul>
                 </div>
             </div>
-            <div class="profile">
-                <img src="c59b53f8-7f31-4114-acd2-d66fffe9fc5b_20260613_074902_0000 (1).png" alt="">
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!----  projects  -->
-    <div class="projects" id="projects">
-        <h3>Some things I've build</h3>
-        <div>
-            <div class="project-card">
-                <h3>E-Commerce Storefront</h3>
-                <p>
-                    A responsive e-commerce platform featuring a custom shopping cart, user
-                    authentication, and secure payment gateway integration using Stripe.
-                </p>
-                <div>
-                    <span>Next.Js</span>
-                    <span>Tailwind CSS</span>
-                    <span>Stripe API</span>
+        <!-- PROJECTS PAGE -->
+        <section x-show="activePage === 'projects'" x-cloak
+            x-transition:enter="transition ease-out duration-500 transform"
+            x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+            class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-3xl font-bold text-slate-100">Featured Builds</h2>
+                <p class="text-slate-400 mt-1">A curated collection of scalable digital products.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="h-44 bg-gradient-to-br from-indigo-900/50 to-purple-900/50 p-6 flex flex-col justify-between relative overflow-hidden">
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-900/60 text-indigo-300 w-max z-10">FinTech</span>
+                        <div
+                            class="absolute -right-8 -bottom-8 text-8xl text-indigo-500/10 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-wallet"></i></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-200 mb-2">Apex Analytics Wallet</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Real-time distributed ledger and
+                                micro-transaction dashboard with predictive budget tools.</p>
+                        </div>
+                        <div class="flex gap-4 text-slate-400 text-sm">
+                            <a href="#" class="hover:text-indigo-400 transition"><i
+                                    class="fa-brands fa-github mr-1"></i> Source</a>
+                            <a href="#" class="hover:text-indigo-400 transition"><i
+                                    class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="h-44 bg-gradient-to-br from-purple-900/50 to-emerald-900/50 p-6 flex flex-col justify-between relative overflow-hidden">
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-900/60 text-purple-300 w-max z-10">AI
+                            Architecture</span>
+                        <div
+                            class="absolute -right-8 -bottom-8 text-8xl text-purple-500/10 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-brain"></i></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-200 mb-2">Neural Engine UI</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">High-throughput visualization node
+                                framework managing vector clustering algorithms.</p>
+                        </div>
+                        <div class="flex gap-4 text-slate-400 text-sm">
+                            <a href="#" class="hover:text-purple-400 transition"><i
+                                    class="fa-brands fa-github mr-1"></i> Source</a>
+                            <a href="#" class="hover:text-purple-400 transition"><i
+                                    class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="h-44 bg-gradient-to-br from-emerald-900/50 to-indigo-900/50 p-6 flex flex-col justify-between relative overflow-hidden">
+                        <span
+                            class="text-xs font-mono px-2.5 py-1 rounded-full bg-slate-900/60 text-emerald-300 w-max z-10">E-Commerce</span>
+                        <div
+                            class="absolute -right-8 -bottom-8 text-8xl text-emerald-500/10 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-200 mb-2">SaaS Flow Cart</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Ultra-performant, headless store
+                                module leveraging localized Edge-caching states.</p>
+                        </div>
+                        <div class="flex gap-4 text-slate-400 text-sm">
+                            <a href="#" class="hover:text-emerald-400 transition"><i
+                                    class="fa-brands fa-github mr-1"></i> Source</a>
+                            <a href="#" class="hover:text-emerald-400 transition"><i
+                                    class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Live Demo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-             <div class="project-card">
-                <h3>Data Entry Management System</h3>
-                <p>
-                    A full-stack web application designed for efficient record handling. Built with
-                    a robust backend to streamline data entry, manage permissions securely, and organize large datasets
-                    seamlessly for administrative users.
-                </p>
-                <div>
-                    <span>Express</span>
-                    <span>PostgreSQL</span>
-                    <span>React</span>
-                </div>
+        <!-- CONTACT PAGE -->
+        <section x-show="activePage === 'contact'" x-cloak
+            x-transition:enter="transition ease-out duration-500 transform"
+            x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+            class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-3xl font-bold text-slate-100">Let's Connect</h2>
+                <p class="text-slate-400 mt-1">Open for architectural consultations or full-time deployment
+                    opportunities.</p>
             </div>
 
+            <div class="grid md:grid-cols-5 gap-8 items-start">
+                <!-- Form Box -->
+                <form @submit.prevent="alert('Message sent simulation!')"
+                    class="md:col-span-3 space-y-4 bg-slate-900/30 p-6 rounded-2xl border border-slate-800">
+                    <div>
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Your
+                            Name</label>
+                        <input type="text" required
+                            class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 rounded-xl px-4 py-3 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Email
+                            Address</label>
+                        <input type="email" required
+                            class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 rounded-xl px-4 py-3 outline-none transition">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Message</label>
+                        <textarea rows="4" required
+                            class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-200 rounded-xl px-4 py-3 outline-none transition resize-none"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 font-medium rounded-xl shadow-lg transition duration-300">
+                        Dispatch Message
+                    </button>
+                </form>
 
-            <div class="project-card">
-                <h3>Interactive Dashboard</h3>
-                <p>
-                    A data visualization dashboard that pulls real-time analytics from a third-party API, allowing users
-                    to filter and sort metrics dynamically.
-                </p>
-                <div>
-                    <span>Vue.Js</span>
-                    <span>D3.Js</span>
-                    <span>Rest API</span>
+                <!-- Socials Panel -->
+                <div class="md:col-span-2 space-y-6">
+                    <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <h4 class="text-sm font-mono text-slate-400 uppercase tracking-widest">Channels</h4>
+                        <div class="flex flex-col space-y-3">
+                            <a href="#" class="flex items-center text-slate-300 hover:text-indigo-400 group transition">
+                                <span
+                                    class="w-10 h-10 bg-slate-950 flex items-center justify-center rounded-xl border border-slate-800 group-hover:border-indigo-500/50 transition mr-3"><i
+                                        class="fa-brands fa-github text-lg"></i></span>
+                                GitHub
+                            </a>
+                            <a href="#" class="flex items-center text-slate-300 hover:text-indigo-400 group transition">
+                                <span
+                                    class="w-10 h-10 bg-slate-950 flex items-center justify-center rounded-xl border border-slate-800 group-hover:border-indigo-500/50 transition mr-3"><i
+                                        class="fa-brands fa-linkedin text-lg"></i></span>
+                                LinkedIn
+                            </a>
+                            <a href="#" class="flex items-center text-slate-300 hover:text-indigo-400 group transition">
+                                <span
+                                    class="w-10 h-10 bg-slate-950 flex items-center justify-center rounded-xl border border-slate-800 group-hover:border-indigo-500/50 transition mr-3"><i
+                                        class="fa-brands fa-x-twitter text-lg"></i></span>
+                                X / Twitter
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <!---   contact  --->
-    <div class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <p>
-            Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a
-            question or just want to say hi, I'll try my best to get back to you!
-        </p>
-        <a href="mailto:mughalrehan621@gmail.com">Say Hello</a>
-    </div>
-    
-    <!----  social links  --->
-    <div class="social-links">
-        <a href="" class="bi bi-linkedin"> Linkedin</a>
-        <a href="" class="bi bi-whatsapp"> Whatsapp</a>
-        <a href="" class="bi bi-twitter"> Twitter</a>
-        <a href="" class="bi bi-instagram"> Instagram</a>
-        <a href="" class="bi bi-facebook"> Facebook</a>
-    </div>
-
-    <!---   footer   --->
-    <footer>
-        <p>Developed by Rehan Ahmad &copy; 2026</p>
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-900 py-6 text-center text-xs font-mono text-slate-500">
+        &copy; 2026 Ahmad Brothers Built cleanly with modern animations.
     </footer>
+
 </body>
 </html>
